@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card">
+        <h1>Book List Page</h1>
+        {{#each data}}
+        <ul>
+            <li>
+                {{> booklistpartial this}}
+            </li>
+        </ul>
+        {{/each}}
+    </div>
+</div>
