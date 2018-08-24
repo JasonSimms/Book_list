@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <a href="/bookList">See All Books</a>
+    {{!-- <br>
+    <br>
+    <form action="" method="get">
+        <label for="name">Title</label>
+        <input type="String" name="name" placeholder="what's on the cover?" id="name"></form>
+    <form action="" method="get">
+        <label for="author">Author</label>
+        <input type="String" name="author" placeholder='Author' id="author"></form>
+    <form action="" method="get">
+        <label for="rating">Rating</label>
+        <input type="String" name="rating" placeholder='rating' id="rating"></form>
+    <form action="" method="get">
+        <label for="description">Desciption</label>
+        <input type="String" name="description" placeholder='description' id="description"></form>
+<br> --}}
+<br>
+<form action="/books/add" method="post">
+  <label for="">Title:</label>
+  <input type="text" name="name">
+
+  <label for="">Author:</label>
+  <input type="text" name="author">
+
+  <label for="">Description:</label>
+  <input type="text" name="description">
+
+  <label for="">Rate:</label>
+  <input type="number" name="rating">
+
+  <button type="submit">ADD</button>
+</form>
+<br>
+{{!-- <a href="/createBook">Create That Book</a> --}}
+</div>

@@ -23,6 +23,49 @@ router.get('/bookId', (req, res, next) => {
   })
 });
 
+
+// router.get('/newBook', (req, res, next) => {
+//   Book.findById(req.query.id).then(data => { 
+//     // console.log(data)
+//     res.render('newBook', {data, title: 'Create a new Book by Jason'});
+//   })
+// });
+
+
+router.post('/books/add', (req, res, next) => {
+  const { name, author, description, rating } = req.body;
+  const newBook = new Book({ name, author, description, rating})
+  newBook.save()
+  .then((book) => {
+    res.redirect('/bookList')
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+});
+
+router.get('/newBook', (req, res, next) => {
+  res.render("newBook")
+});
+
+
+// router.post("/createBook", (req, res) => {
+//   const bookEntry = new Book({
+//     name: "Minou",
+//     rating: "13",
+//     author: "white",
+//     description: "eating, sleeping , tree climbing"
+//   });
+//   //PROMISE CREATED FROM CAT DB-----------------------------------
+//   bookEntry
+//     .save()
+//     .then(result => {
+//       console.log(result);
+//     })
+//     .catch(console.error);
+//   //response-----------------------------
+// });
+
 /* GET BOOK INFO BY ID */
 // router.get('/book/:id', (req, res, next) => {
 //   Book.findById(req.query.id).then(data => { 
